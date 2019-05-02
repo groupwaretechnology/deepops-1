@@ -26,6 +26,11 @@ if ! which python3; then
     exit 1
 fi
 
+if ! which docker; then
+    echo "docker needed for Kubespray setup, please install"
+    exit 1
+fi
+
 get_all_helm_tgzs() {
     local repo_url="$1"
     rm -f index.yaml
